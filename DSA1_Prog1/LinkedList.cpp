@@ -49,7 +49,6 @@ public:
         Node<L> *ptr = new Node<L>;
         ptr->data = d;
         if(head == NULL){
-            ptr->data = d;
             ptr->next = NULL;
             head = ptr;
 
@@ -87,7 +86,11 @@ public:
         //ptr = head;
         L d = head->data;
         head = head->next;
+        if(head == NULL){
+            tail = NULL;
+        }
         //delete ptr;
+        //
         return d;
     }
     
@@ -300,6 +303,3 @@ int main(int argc, const char * argv[]) {
     
     return 0;
 }
-
-
-
